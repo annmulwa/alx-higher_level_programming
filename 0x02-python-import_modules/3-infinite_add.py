@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 def sumarg(argv):
     sum = 0
     arglen = len(argv) - 1
