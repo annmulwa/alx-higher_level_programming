@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def sumarg(argv):
     sum = 0
     arglen = len(argv) - 1
@@ -12,6 +11,7 @@ def sumarg(argv):
             sum += int(argv[s])
             s += 1
         print("{:d}".format(sum))
+
 
 if __name__ == "__main__":
     import sys
