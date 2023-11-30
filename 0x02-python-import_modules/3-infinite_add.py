@@ -4,6 +4,7 @@ def sumarg(argv):
     arglen = len(argv) - 1
     if arglen == 0:
         print("{:d}".format(arglen))
+        return
     else:
         s = 1
         while s <= arglen:
