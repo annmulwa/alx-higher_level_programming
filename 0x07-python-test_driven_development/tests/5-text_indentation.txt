@@ -1,0 +1,113 @@
+#5-text_identation.py
+================================
+Using 5-text_indentation.py
+================================
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("Hi?")
+    Hi?
+    <BLANKLINE>
+
+No spaces at the beginning of a line
+    >>> text_indentation("   Hi.")
+    Hi.
+    <BLANKLINE>
+
+    >>> text_indentation("          ")
+
+No spaces are printed at the end of each line.
+
+
+    >>> text_indentation("Hi.   ")
+    Hi.
+    <BLANKLINE>
+
+    >>> text_indentation("    Wow now.    This is niice.   ")
+    Wow now.
+    <BLANKLINE>
+    This is niice.
+    <BLANKLINE>
+
+New lines are only printed for the characters ``.``, ``?``, and ``:`` if a
+text is not ending with one of these characters then it is not ended with a new line.
+
+    >>> text_indentation("Hey, there")
+    Hey, there
+
+New lines within a string are printed as normal.
+
+    >>> text_indentation("Print a new-line! Hi there:\nDone.")
+    Print a new-line! Hi there:
+    <BLANKLINE>
+    <BLANKLINE>
+    Done.
+    <BLANKLINE>
+
+    >>> text_indentation("\n\n\n Look.")
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    Look.
+    <BLANKLINE>
+
+    >>> text_indentation("Another \n line.")
+    Another 
+    line.
+    <BLANKLINE>
+
+Given example:
+
+    >>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing "
+    ... "elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas "
+    ... "commovere? Non autem hoc: igitur ne illud quidem. Fortasse id optimum, "
+    ... "sed ubi illud: Plus semper voluptatis? Teneo, inquit, finem illi videri "
+    ... "nihil dolere. Transfer idem ad modestiam vel temperantiam, quae est "
+    ... "moderatio cupiditatum rationi oboediens. Si id dicis, vicimus. Inde "
+    ... "sermone vario sex illa a Dipylo stadia confecimus. Sin aliud quid "
+    ... "voles, postea. Quae animi affectio suum cuique tribuens atque hanc, "
+    ... "quam dico. Utinam quidem dicerent alium alio beatiorem! Iam ruinas "
+    ... "videres") # doctest: +NORMALIZE_WHITESPACE
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <BLANKLINE>
+    Quonam modo?
+    <BLANKLINE>
+    Utrum igitur tibi litteram videor an totas paginas commovere?
+    <BLANKLINE>
+    Non autem hoc:
+    <BLANKLINE>
+    igitur ne illud quidem.
+    <BLANKLINE>
+    Fortasse id optimum, sed ubi illud:
+    <BLANKLINE>
+    Plus semper voluptatis?
+    <BLANKLINE>
+    Teneo, inquit, finem illi videri nihil dolere.
+    <BLANKLINE>
+    Transfer idem ad modestiam vel temperantiam, 
+    quae est moderatio cupiditatum rationi oboediens.
+    <BLANKLINE>
+    Si id dicis, vicimus.
+    <BLANKLINE>
+    Inde sermone vario sex illa a Dipylo stadia confecimus.
+    <BLANKLINE>
+    Sin aliud quid voles, postea.
+    <BLANKLINE>
+    Quae animi affectio suum cuique tribuens atque hanc, quam dico.
+    <BLANKLINE>
+    Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
+
+Invalid Text
+============
+
+Text must be a string
+    >>> text_indentation(4)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation({"ok": 10, "again": 22})
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
