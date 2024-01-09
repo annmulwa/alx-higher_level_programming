@@ -13,7 +13,7 @@ def pascal_triangle(n):
         return []
     triangle = [[1]]
     while len(triangle) != n:
-        tri_last = triangle [-1]
+        tri_last = triangle[-1]
         tmp = [1]
         for i in range(len(tri_last) - 1):
             tmp.append(tri_last[i] + tri_last[i + 1])
